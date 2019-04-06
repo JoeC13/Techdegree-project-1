@@ -84,10 +84,10 @@ document.querySelector("body").style.background = changeColor; //info from youtu
 };
 printQuote();
 
+// setInterval set to 25 seconds that changes the quote and background color from the printQuote function.
+setInterval(function(){
+  printQuote()}, 25000
+);
 
-//setInterval used to change the quote and background color every 25 seconds after the button is pressed.
-document.getElementById('loadQuote').addEventListener("click", function(){
-    setInterval(function(){
-    printQuote();
-  }, 25000);
-});
+// original addEventListener
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
